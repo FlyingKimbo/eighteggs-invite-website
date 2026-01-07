@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 8 Eggs - Friend Invite</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🥚 8 EGGS</div>
+            <div class="tagline">Catch the falling eggs!</div>
+        </div>
+        
+        <div class="hero">
+            <h1>🎉 You're Invited!</h1>
+            <p class="subtitle">Your friend wants you to join the egg-catching adventure!</p>
+            
+            <div class="friend-card">
+                <div class="egg-icon">🥚</div>
+                <div class="friend-info">
+                    <p class="friend-label">Friend Invite Code:</p>
+                    <p class="friend-code" id="friendCode">LOADING...</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="actions">
+            <a href="https://play.google.com/store/apps/details?id=com.eighteggs.eighteggs" 
+               class="btn btn-primary" id="installBtn">
+                <span class="btn-icon">📲</span>
+                <span class="btn-text">Install 8 Eggs</span>
+            </a>
+            
+            <a href="eighteggs://invite/" class="btn btn-secondary" id="openBtn">
+                <span class="btn-icon">🎯</span>
+                <span class="btn-text">Already Installed? Open Game</span>
+            </a>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🏆</div>
+                <h3>Compete with Friends</h3>
+                <p>Challenge your friends on the global leaderboard</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🎁</div>
+                <h3>Get Bonus Eggs</h3>
+                <p>Receive special rewards for joining via invite</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🌎</div>
+                <h3>Play Anywhere</h3>
+                <p>Sync progress across all your devices</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>By installing, you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a></p>
+            <p class="copyright">© 2024 8 Eggs Game. All rights reserved.</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

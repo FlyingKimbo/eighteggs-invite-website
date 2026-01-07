@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding: 40px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo {
+    font-size: 48px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
+
+.tagline {
+    color: #666;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 42px;
+    color: #333;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 32px;
+}
+
+.friend-card {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    padding: 20px 30px;
+    border-radius: 16px;
+    margin-top: 20px;
+}
+
+.egg-icon {
+    font-size: 48px;
+    margin-right: 20px;
+}
+
+.friend-info {
+    text-align: left;
+}
+
+.friend-label {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 4px;
+}
+
+.friend-code {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: 2px;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-secondary {
+    background: white;
+    color: #667eea;
+    border: 2px solid #667eea;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.btn-icon {
+    font-size: 24px;
+    margin-right: 12px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.feature {
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+    background: #f8f9fa;
+}
+
+.feature-icon {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.feature h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.feature p {
+    font-size: 14px;
+    color: #666;
+}
+
+.footer {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+.footer a {
+    color: #667eea;
+    text-decoration: none;
+}
+
+.footer p {
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.copyright {
+    font-size: 14px;
+    color: #999;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 24px;
+    }
+    
+    h1 {
+        font-size: 32px;
+    }
+    
+    .friend-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .egg-icon {
+        margin-right: 0;
+        margin-bottom: 16px;
+    }
+    
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
