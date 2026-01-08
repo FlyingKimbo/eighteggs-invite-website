@@ -126,6 +126,11 @@ h1 {
     font-weight: 700;
     color: #333;
     letter-spacing: 2px;
+    /* NEW LINES FOR MOBILE */
+    word-break: break-all;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    display: block;
 }
 
 .actions {
@@ -271,6 +276,7 @@ h1 {
     }
 
 }
+
 
 
 
