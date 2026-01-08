@@ -34,6 +34,19 @@ function updateFriendCode() {
     console.log('Friend code detected:', friendCode);
 }
 
+// Custom alert functions
+function showCustomAlert(message) {
+    const alertBox = document.getElementById('customAlert');
+    const messageElement = alertBox.querySelector('p');
+    messageElement.textContent = message;
+    alertBox.style.display = 'flex';
+}
+
+function hideCustomAlert() {
+    const alertBox = document.getElementById('customAlert');
+    alertBox.style.display = 'none';
+}
+
 // Track install click
 function setupTracking() {
     const installBtn = document.getElementById('installBtn');
@@ -137,7 +150,7 @@ function setupAppDetection() {
             console.log('App likely NOT installed');
             
             // Show alert
-            alert('Please install 8Eggs first!');
+            showCustomAlert('Please install 8Eggs first!');
             
             // Change button to go to Play Store
             openBtn.href = 'https://play.google.com/store/apps/details?id=com.eighteggs.eighteggs';
@@ -168,6 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const friendCode = getFriendCodeFromURL();
     document.title = `🎮 Join 8 Eggs - Invite from ${friendCode}`;
 });
+
 
 
 
