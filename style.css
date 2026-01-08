@@ -192,8 +192,8 @@ h1 {
 }
 
 .feature-icon {
-    width: 64px;
-    height: 32px;
+    width: 128px;
+    height: 64px;
     margin-bottom: 12px;
     display: block;
     margin-left: auto;
@@ -285,6 +285,7 @@ h1 {
     }
 
 }
+
 
 
 
