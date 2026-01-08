@@ -47,34 +47,45 @@ function hideCustomAlert() {
     alertBox.style.display = 'none';
 }
 
-// Track install click
+// Replace the setupTracking() function with this:
 function setupTracking() {
     const installBtn = document.getElementById('installBtn');
     if (installBtn) {
-        installBtn.addEventListener('click', function() {
-            const friendCode = getFriendCodeFromURL();
+        installBtn.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent immediate redirect
             
-            // Send to analytics (you can replace with your own)
+            const friendCode = getFriendCodeFromURL();
             console.log('Install clicked with friend code:', friendCode);
             
-            // Store in sessionStorage to detect after install
-            sessionStorage.setItem('pending_install', friendCode);
-            
-            // Redirect to Play Store after a brief delay for tracking
-            setTimeout(() => {
-                window.location.href = installBtn.href;
-            }, 300);
+            // 1. COPY TO CLIPBOARD
+            const clipboardText = `friend_code=${friendCode}`;
+            navigator.clipboard.writeText(clipboardText)
+                .then(() => {
+                    console.log('Friend code copied to clipboard:', clipboardText);
+                    
+                    // 2. Show success message
+                    alert('Friend code copied! After installing, open the app to automatically apply it.');
+                    
+                    // 3. Redirect to Play Store after delay
+                    setTimeout(() => {
+                        window.location.href = installBtn.href;
+                    }, 500);
+                })
+                .catch(err => {
+                    console.error('Failed to copy to clipboard:', err);
+                    
+                    // Fallback: Store in localStorage
+                    localStorage.setItem('8eggs_friend_code', friendCode);
+                    alert('Friend code saved! Install the app then open it.');
+                    
+                    // Redirect anyway
+                    setTimeout(() => {
+                        window.location.href = installBtn.href;
+                    }, 500);
+                });
         });
     }
-    
-    // Check if coming from install redirect
-    const pendingInstall = sessionStorage.getItem('pending_install');
-    if (pendingInstall) {
-        console.log('Returning from install with code:', pendingInstall);
-        sessionStorage.removeItem('pending_install');
-    }
 }
-
 // Check if app is installed (for better UX) - MODIFIED VERSION
 function checkAppInstalled() {
     const openBtn = document.getElementById('openBtn');
@@ -181,6 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const friendCode = getFriendCodeFromURL();
     document.title = `🎮 Join 8 Eggs - Invite from ${friendCode}`;
 });
+
 
 
 
