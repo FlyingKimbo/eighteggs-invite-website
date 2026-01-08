@@ -60,8 +60,9 @@ body {
 }
 
 .logo img {
-    height: 60px; /* Adjust as needed */
+    max-height: 60px; /* ← FIX: Limits maximum height */
     width: auto;
+    border-radius: 10px; /* Optional: add some rounding */
 }
 
 .logo span {
@@ -245,6 +246,7 @@ h1 {
     }
 
 }
+
 
 
 
