@@ -192,8 +192,12 @@ h1 {
 }
 
 .feature-icon {
-    font-size: 36px;
+    width: 40px;
+    height: 40px;
     margin-bottom: 12px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .feature h3 {
@@ -281,6 +285,7 @@ h1 {
     }
 
 }
+
 
 
 
