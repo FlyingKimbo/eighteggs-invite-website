@@ -50,6 +50,27 @@
             font-weight: bold;
         }
         .back-link:hover { text-decoration: underline; }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .data-table th, .data-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .data-table th {
+            background: #f2f2f2;
+            color: #333;
+        }
+        .notice {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
     </style>
 </head>
 <body>
@@ -57,90 +78,185 @@
         <h1>🔒 Privacy Policy - 8Eggs</h1>
         <p class="date"><strong>Last Updated:</strong> December 27, 2024</p>
 
-        <div class="section">
-            <h2>📱 About 8Eggs</h2>
-            <p>8Eggs is a mobile game where players catch falling eggs. This policy applies to both our mobile app and invitation website.</p>
+        <div class="notice">
+            <strong>📱 About This Policy:</strong> This privacy policy applies to the 8Eggs mobile game available on Google Play Store and our invitation website at invite.888solutions.info.
         </div>
 
         <div class="section">
-            <h2>📊 Data We Collect</h2>
+            <h2>📊 Data Collection Summary</h2>
             
-            <h3>In the 8Eggs App:</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Collected</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>User IDs & Device IDs</strong></td>
+                        <td>✅ Yes</td>
+                        <td>Account management, game progress</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Display Names</strong></td>
+                        <td>✅ Yes</td>
+                        <td>Leaderboard functionality</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Game Progress & Scores</strong></td>
+                        <td>✅ Yes</td>
+                        <td>App functionality, save games</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Purchase Receipts</strong></td>
+                        <td>✅ Yes</td>
+                        <td>In-app purchase verification</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Device Information</strong></td>
+                        <td>✅ Yes</td>
+                        <td>AdMob compatibility, analytics</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Email/Personal Info</strong></td>
+                        <td>❌ No</td>
+                        <td>Not collected</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Location Data</strong></td>
+                        <td>❌ No</td>
+                        <td>Not collected</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>🎮 Data Collection in Detail</h2>
+            
+            <h3>In the 8Eggs Mobile App:</h3>
             <ul>
-                <li><strong>Player Display Name:</strong> Chosen by you for leaderboards</li>
-                <li><strong>Anonymous User ID:</strong> Generated for game progress tracking</li>
-                <li><strong>Game Progress:</strong> Scores, levels, achievements</li>
-                <li><strong>Device Information:</strong> Basic device info for compatibility</li>
-                <li><strong>Purchase Records:</strong> In-app purchase receipts (processed by Google Play)</li>
+                <li><strong>User & Device IDs:</strong> Anonymous identifiers generated for your game account</li>
+                <li><strong>Display Names:</strong> Player-chosen names for leaderboards (minimum 3 characters)</li>
+                <li><strong>Game Progress Data:</strong> Scores, levels unlocked, achievements, game settings</li>
+                <li><strong>Purchase Receipts:</strong> Self-formatted Google Play purchase receipts stored for verification and anti-fraud purposes</li>
+                <li><strong>Device Information:</strong> Basic device model, OS version for AdMob ad compatibility</li>
             </ul>
 
             <h3>On Our Website (invite.888solutions.info):</h3>
             <ul>
-                <li><strong>Friend Referral Codes:</strong> From URL parameters for invitation tracking</li>
-                <li><strong>Install Click Events:</strong> To track successful installations</li>
-                <li><strong>Browser Information:</strong> For website compatibility</li>
+                <li><strong>Friend Referral Codes:</strong> From URL parameters (e.g., ?friend_code=ABC123)</li>
+                <li><strong>Install Click Events:</strong> To track successful game installations</li>
+                <li><strong>Browser Information:</strong> For website compatibility and optimization</li>
             </ul>
         </div>
 
         <div class="section">
-            <h2>💾 How We Store Data</h2>
-            <p>All data is stored securely in Supabase databases with:</p>
+            <h2>💾 Data Storage & Security</h2>
+            <p>All data is stored securely with the following measures:</p>
             <ul>
-                <li>🔐 <strong>Encryption in transit:</strong> HTTPS/SSL for all data transfers</li>
-                <li>🔒 <strong>Encryption at rest:</strong> Database-level encryption</li>
-                <li>📱 <strong>Local Storage:</strong> Some game data stored locally on your device</li>
+                <li><strong>Primary Storage:</strong> Supabase databases with encryption at rest</li>
+                <li><strong>Data Transmission:</strong> All data encrypted in transit via HTTPS/SSL</li>
+                <li><strong>Local Storage:</strong> Some game data cached locally on your device</li>
+                <li><strong>Purchase Receipts:</strong> Stored in Supabase for purchase verification and fraud prevention</li>
+                <li><strong>Data Location:</strong> Stored in secure cloud servers with access limited to essential personnel</li>
             </ul>
         </div>
 
         <div class="section">
-            <h2>🎯 How We Use Data</h2>
-            <p>Data is used solely for:</p>
+            <h2>🎯 Data Usage Purposes</h2>
+            <p>We use collected data exclusively for:</p>
             <ul>
-                <li>✅ Game functionality and progress tracking</li>
-                <li>✅ Leaderboard rankings and competition</li>
-                <li>✅ Friend referral system rewards</li>
-                <li>✅ App improvement and bug fixes</li>
-                <li>✅ Processing in-app purchases (via Google Play)</li>
+                <li><strong>App Functionality:</strong> Game features, progress saving, leaderboards</li>
+                <li><strong>Account Management:</strong> User account creation, identification, and management</li>
+                <li><strong>Advertising:</strong> Displaying AdMob advertisements (non-personalized)</li>
+                <li><strong>Purchase Verification:</strong> Validating in-app purchases and preventing fraud</li>
+                <li><strong>Referral System:</strong> Tracking friend invitations and rewards</li>
+                <li><strong>App Improvement:</strong> Bug fixes and performance optimization</li>
             </ul>
         </div>
 
         <div class="section">
-            <h2>🚫 What We Don't Do</h2>
+            <h2>👥 Third-Party Services & Data Sharing</h2>
+            
+            <h3>Services We Use:</h3>
             <ul>
+                <li><strong>Google AdMob:</strong> For displaying advertisements in our app</li>
+                <li><strong>Google Play Billing:</strong> For processing in-app purchases (we only receive purchase receipts)</li>
+                <li><strong>Supabase:</strong> For secure database storage and backend services</li>
+                <li><strong>GitHub Pages:</strong> For hosting our invitation website</li>
+            </ul>
+
+            <h3>Data Sharing Policy:</h3>
+            <ul>
+                <li>✅ We share device information with AdMob for ad display</li>
+                <li>✅ We share purchase data with Google Play for transaction processing</li>
                 <li>❌ We do NOT sell your data to third parties</li>
-                <li>❌ We do NOT share data with advertisers</li>
-                <li>❌ We do NOT collect precise location data</li>
-                <li>❌ We do NOT access your contacts or photos</li>
-                <li>❌ We do NOT see your payment information (handled by Google Play)</li>
+                <li>❌ We do NOT share personal information with advertisers</li>
+                <li>❌ We do NOT share data for marketing purposes</li>
             </ul>
         </div>
 
         <div class="section">
-            <h2>👥 Third-Party Services</h2>
+            <h2>⏱️ Data Retention & Deletion</h2>
             <ul>
-                <li><strong>Google Play Store:</strong> For app distribution and in-app purchases</li>
-                <li><strong>Supabase:</strong> For secure database storage</li>
-                <li><strong>GitHub Pages:</strong> For hosting our website</li>
+                <li><strong>Account Data:</strong> Retained until you request deletion</li>
+                <li><strong>Purchase Records:</strong> Retained for 3 years for financial compliance</li>
+                <li><strong>Deletion Requests:</strong> Processed within 7 days, fully removed within 30 days</li>
+                <li><strong>Backup Data:</strong> Encrypted backups retained for up to 90 days</li>
             </ul>
+            <p><em>Note: Some purchase data may be retained longer for legal/financial compliance requirements.</em></p>
         </div>
 
         <div class="contact-box">
-            <h2>📬 Contact & Data Requests</h2>
-            <p>For privacy questions or data requests:</p>
+            <h2>📬 Your Rights & Contact Information</h2>
+            
+            <h3>Data Rights:</h3>
+            <ul>
+                <li>✅ Right to access your stored data</li>
+                <li>✅ Right to request data deletion</li>
+                <li>✅ Right to request partial data removal</li>
+                <li>✅ Right to opt-out of data collection (may limit app functionality)</li>
+            </ul>
+
+            <h3>Contact Us:</h3>
             <p><strong>Email:</strong> eighteggs702@gmail.com</p>
-            <p><strong>Account Deletion:</strong> <a href="/delete-account/">Request account deletion here</a></p>
+            <p><strong>Account Deletion:</strong> <a href="/delete-account/">Request full account deletion</a></p>
+            <p><strong>Partial Data Removal:</strong> Email us with specific requests</p>
+            
+            <p style="margin-top: 15px;"><em>We respond to all requests within 7 business days.</em></p>
+        </div>
+
+        <div class="section">
+            <h2>👶 Children's Privacy</h2>
+            <p>8Eggs does not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us immediately for deletion.</p>
         </div>
 
         <div class="section">
             <h2>📝 Policy Updates</h2>
-            <p>We may update this policy. Continued use of 8Eggs means you accept updates.</p>
-            <p>Check this page periodically for changes.</p>
+            <p>We may update this privacy policy periodically. Significant changes will be:</p>
+            <ul>
+                <li>Posted on this page with updated "Last Updated" date</li>
+                <li>Announced within the app when possible</li>
+                <li>Required to be accepted upon next app launch for major changes</li>
+            </ul>
+            <p>Your continued use of 8Eggs constitutes acceptance of any updates.</p>
+        </div>
+
+        <div class="section">
+            <h2>🌍 International Data Transfers</h2>
+            <p>As a Malaysia-based developer, your data may be stored and processed in servers located outside your country. By using 8Eggs, you consent to such transfers.</p>
         </div>
 
         <a href="/" class="back-link">← Back to 8Eggs Invite Page</a>
         
-        <p style="margin-top: 40px; color: #666; font-size: 0.9em;">
-            © 2024 8Eggs. All rights reserved.
+        <p style="margin-top: 40px; color: #666; font-size: 0.9em; text-align: center;">
+            © 2024 8Eggs Game. All rights reserved.<br>
+            Developer: 8Eggs Studio<br>
+            Contact: eighteggs702@gmail.com<br>
+            <em>This policy complies with Google Play Data Safety requirements</em>
         </p>
     </div>
 </body>
