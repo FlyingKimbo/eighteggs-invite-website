@@ -221,6 +221,31 @@ h1 {
     color: #999;
 }
 
+/* Add this new section for footer links */
+.footer-links {
+    margin: 15px 0;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.footer-links a {
+    color: #667eea;
+    text-decoration: none;
+    margin: 0 8px;
+    padding: 4px 0;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    color: #764ba2;
+}
+
+.footer-links .separator {
+    color: #ccc;
+    margin: 0 5px;
+}
+
 @media (max-width: 600px) {
     .container {
         padding: 24px;
@@ -246,6 +271,7 @@ h1 {
     }
 
 }
+
 
 
 
