@@ -68,7 +68,7 @@ body {
 .logo span {
     font-size: 48px;
     font-weight: 700;
-    color: 650000;
+    color: #650000;
     font-family: 'Poppins', sans-serif;
 }
 .tagline {
@@ -246,6 +246,7 @@ h1 {
     }
 
 }
+
 
 
 
