@@ -105,15 +105,65 @@ function checkAppInstalled() {
         });
     }
 }
+
+// Mobile app detection for "Open Game" button
+function setupAppDetection() {
+    const openBtn = document.getElementById('openBtn');
+    if (!openBtn) return;
+    
+    // Only for mobile devices
+    if (!/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        return;
+    }
+    
+    openBtn.addEventListener('click', function(e) {
+        // Store the original href
+        const originalHref = openBtn.href;
+        let appOpened = false;
+        
+        console.log('Testing if app is installed...');
+        
+        // First, try to open a test deep link
+        window.location = 'eighteggs://test';
+        
+        // Mark as opened after a very short delay
+        setTimeout(() => {
+            appOpened = true;
+            console.log('App may have opened');
+        }, 150);
+        
+        // Check if still in browser after longer delay
+        setTimeout(() => {
+            if (!appOpened && document.hasFocus()) {
+                console.log('App not installed - showing alert');
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Show alert and change link to Play Store
+                alert('Please install 8 Eggs first!');
+                openBtn.href = 'https://play.google.com/store/apps/details?id=com.eighteggs.eighteggs';
+                
+                // Restore original href after 3 seconds
+                setTimeout(() => {
+                    openBtn.href = originalHref;
+                    console.log('Original link restored');
+                }, 3000);
+                
+                return false;
+            }
+        }, 600);
+    });
+}
 // Initialize everything when page loads
 document.addEventListener('DOMContentLoaded', function() {
     updateFriendCode();
     setupTracking();
-    
+    setupAppDetection(); // <-- ADD THIS LINE
    
     // Set page title with friend code
     const friendCode = getFriendCodeFromURL();
     document.title = `🎮 Join 8 Eggs - Invite from ${friendCode}`;
 });
+
 
 
