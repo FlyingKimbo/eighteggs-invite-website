@@ -196,14 +196,28 @@ h1 {
     margin: 0 auto;       /* NEW: Centers if needed */
 }
 
+/* Force image to respect container boundaries */
 .feature-icon {
-    width: 256px;
-    height: 128px;
+    width: 40px;
+    height: 40px;
     margin-bottom: 12px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    object-fit: contain; /* NEW: Scales image to fit container */
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+    /* NEW: Ensures image element itself is constrained */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Target the actual img element inside */
+.feature-icon img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 .feature h3 {
@@ -291,6 +305,7 @@ h1 {
     }
 
 }
+
 
 
 
