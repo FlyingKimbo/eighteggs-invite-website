@@ -198,8 +198,8 @@ h1 {
 
 /* Force image to respect container boundaries */
 .feature-icon {
-    width: 40px;
-    height: 40px;
+    width: 256px;
+    height: 128px;
     margin-bottom: 12px;
     display: block;
     margin-left: auto;
@@ -305,6 +305,7 @@ h1 {
     }
 
 }
+
 
 
 
