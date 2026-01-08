@@ -110,13 +110,10 @@ document.addEventListener('DOMContentLoaded', function() {
     updateFriendCode();
     setupTracking();
     
-    // Only check app install on mobile
-    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-        checkAppInstalled();
-    }
-    
+   
     // Set page title with friend code
     const friendCode = getFriendCodeFromURL();
     document.title = `🎮 Join 8 Eggs - Invite from ${friendCode}`;
 });
+
 
