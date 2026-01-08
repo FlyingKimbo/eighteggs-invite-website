@@ -198,6 +198,7 @@ h1 {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    object-fit: contain; /* NEW: Scales image to fit container */
 }
 
 .feature h3 {
@@ -285,6 +286,7 @@ h1 {
     }
 
 }
+
 
 
 
