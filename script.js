@@ -62,29 +62,49 @@ function setupTracking() {
     }
 }
 
-// Check if app is installed (for better UX)
+// Check if app is installed (for better UX) - MODIFIED VERSION
 function checkAppInstalled() {
     const openBtn = document.getElementById('openBtn');
     
-    // Try to open the app
-    window.location = 'eighteggs://test';
+    // REMOVED the automatic app launch on page load
+    // window.location = 'eighteggs://test'; // <-- This line caused the pop-up
     
-    // If we're still here after 500ms, app is not installed
-    setTimeout(() => {
-        if (document.hasFocus()) {
-            // App not installed - hide or disable open button
-            if (openBtn) {
-                openBtn.style.opacity = '0.5';
-                openBtn.style.cursor = 'not-allowed';
-                openBtn.onclick = (e) => {
+    // If we're on mobile, attach a click handler to detect if app opens
+    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent) && openBtn) {
+        openBtn.addEventListener('click', function(e) {
+            // Store the original href in case we need to restore it
+            const originalHref = openBtn.href;
+            
+            // Set a flag to check if app opened
+            let appOpened = false;
+            
+            // Try to open the app
+            window.location.href = 'eighteggs://test';
+            
+            // If still in browser after 500ms, app didn't open
+            setTimeout(() => {
+                if (!appOpened && document.hasFocus()) {
+                    // Prevent the default link behavior
                     e.preventDefault();
+                    
+                    // Show message and redirect to install page
                     alert('Please install 8 Eggs first!');
-                };
-            }
-        }
-    }, 500);
+                    openBtn.href = 'https://play.google.com/store/apps/details?id=com.eighteggs.eighteggs';
+                    
+                    // Optional: Restore original href after a delay
+                    setTimeout(() => {
+                        openBtn.href = originalHref;
+                    }, 3000);
+                }
+            }, 500);
+            
+            // Reset flag after a short time
+            setTimeout(() => {
+                appOpened = true;
+            }, 100);
+        });
+    }
 }
-
 // Initialize everything when page loads
 document.addEventListener('DOMContentLoaded', function() {
     updateFriendCode();
@@ -99,3 +119,4 @@ document.addEventListener('DOMContentLoaded', function() {
     const friendCode = getFriendCodeFromURL();
     document.title = `🎮 Join 8 Eggs - Invite from ${friendCode}`;
 });
+
