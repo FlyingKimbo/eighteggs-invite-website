@@ -52,14 +52,24 @@ body {
 }
 
 .logo {
-    font-size: 48px;
-    font-weight: 700;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
     margin-bottom: 8px;
 }
 
+.logo img {
+    height: 60px; /* Adjust as needed */
+    width: auto;
+}
+
+.logo span {
+    font-size: 48px;
+    font-weight: 700;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
 .tagline {
     color: #666;
     font-size: 18px;
@@ -235,6 +245,7 @@ h1 {
     }
 
 }
+
 
 
 
