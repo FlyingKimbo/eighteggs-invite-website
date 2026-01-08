@@ -101,9 +101,11 @@ h1 {
     display: inline-flex;
     align-items: center;
     background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
-    padding: 20px 30px;
+    padding: 20px;
     border-radius: 16px;
     margin-top: 20px;
+    max-width: 100%; /* NEW: Prevents overflow */
+    box-sizing: border-box; /* NEW: Includes padding in width */
 }
 
 .egg-icon {
@@ -264,6 +266,9 @@ h1 {
         flex-direction: column;
         text-align: center;
         padding: 20px;
+        width: 100%; /* NEW: Makes it fit the container */
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .egg-icon {
@@ -276,6 +281,7 @@ h1 {
     }
 
 }
+
 
 
 
