@@ -191,6 +191,9 @@ h1 {
     padding: 20px;
     border-radius: 12px;
     background: #f8f9fa;
+    max-width: 100%;      /* NEW: Prevents overflow */
+    box-sizing: border-box; /* NEW: Includes padding in width */
+    margin: 0 auto;       /* NEW: Centers if needed */
 }
 
 .feature-icon {
@@ -288,6 +291,7 @@ h1 {
     }
 
 }
+
 
 
 
