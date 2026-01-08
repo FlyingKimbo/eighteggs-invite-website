@@ -86,6 +86,54 @@ function setupTracking() {
         });
     }
 }
+
+function setupAppDetection() {
+    const openBtn = document.getElementById('openBtn');
+    if (!openBtn) return;
+    
+    // Only for mobile devices
+    if (!/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        return;
+    }
+    
+    openBtn.addEventListener('click', function(e) {
+        console.log('Open Game button clicked on mobile');
+        
+        // Store original link
+        const originalHref = openBtn.href;
+        let appOpened = false;
+        
+        // Create an invisible iframe to test the deep link
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = 'eighteggs://test';
+        
+        // Add to page
+        document.body.appendChild(iframe);
+        
+        // Set a timeout to check if app opened - CHANGED TO 2500ms
+        setTimeout(function() {
+            // If we get here, the iframe loaded (app didn't intercept)
+            console.log('App likely NOT installed');
+            
+            // Show alert
+            showCustomAlert('Please install 8Eggs first!');
+            
+            // Change button to go to Play Store
+            openBtn.href = 'https://play.google.com/store/apps/details?id=com.eighteggs.eighteggs';
+            
+            // After 3 seconds, restore original link
+            setTimeout(function() {
+                openBtn.href = originalHref;
+                console.log('Original link restored');
+            }, 3000);
+            
+            // Remove iframe
+            document.body.removeChild(iframe);
+            
+        }, 2500); // CHANGED FROM 800ms TO 2500ms
+    });
+}
 // Check if app is installed (for better UX) - MODIFIED VERSION
 function checkAppInstalled() {
     const openBtn = document.getElementById('openBtn');
@@ -108,11 +156,10 @@ function checkAppInstalled() {
             // If still in browser after 500ms, app didn't open
             setTimeout(() => {
                 if (!appOpened && document.hasFocus()) {
-                    // Prevent the default link behavior
-                    e.preventDefault();
+                    
                     
                     // Show message and redirect to install page
-                    alert('Please install 8 Eggs first!');
+                    showCustomAlert('Please install 8 Eggs first!');
                     openBtn.href = 'https://play.google.com/store/apps/details?id=com.eighteggs.eighteggs';
                     
                     // Optional: Restore original href after a delay
@@ -135,12 +182,13 @@ function checkAppInstalled() {
 document.addEventListener('DOMContentLoaded', function() {
     updateFriendCode();
     setupTracking();
-    
+    setupAppDetection()
    
     // Set page title with friend code
     const friendCode = getFriendCodeFromURL();
     document.title = `🎮 Join 8 Eggs - Invite from ${friendCode}`;
 });
+
 
 
 
