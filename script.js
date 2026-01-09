@@ -64,7 +64,7 @@ function setupTracking() {
                     console.log('Friend code copied to clipboard:', clipboardText);
                     
                     // 2. Show success message
-                    showCustomAlert('Friend code copied! After installing, open the app to automatically apply it.');
+                    // showCustomAlert('Friend code copied! After installing, open the app to automatically apply it.');
                     
                     // 3. Redirect to Play Store after delay
                     setTimeout(() => {
@@ -188,6 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const friendCode = getFriendCodeFromURL();
     document.title = `🎮 Join 8 Eggs - Invite from ${friendCode}`;
 });
+
 
 
 
