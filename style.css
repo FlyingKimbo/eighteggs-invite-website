@@ -137,7 +137,7 @@ h1 {
 .copy-button-container {
     display: flex;
     justify-content: center;  /* Center button horizontally */
-    margin: 15px 0;
+    margin: 20px 0 30px 0;
 }
 
 .manual-copy {
@@ -322,6 +322,7 @@ h1 {
     }
 
 }
+
 
 
 
