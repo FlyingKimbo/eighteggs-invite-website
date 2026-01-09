@@ -134,6 +134,12 @@ h1 {
     font-family: monospace;
 }
 
+.copy-button-container {
+    display: flex;
+    justify-content: center;  /* Center button horizontally */
+    margin: 15px 0;
+}
+
 .manual-copy {
     margin-top: 20px;
     padding: 15px;
@@ -316,6 +322,7 @@ h1 {
     }
 
 }
+
 
 
 
