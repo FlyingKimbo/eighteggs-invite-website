@@ -55,7 +55,7 @@ function copyToClipboard(text) {
         });
 }
 
-// Setup main invitation button
+// Setup main invitation button - ALWAYS GOES TO PLAY STORE
 function setupInviteButton() {
     const inviteBtn = document.getElementById('inviteBtn');
     if (!inviteBtn) return;
@@ -66,22 +66,13 @@ function setupInviteButton() {
         const friendCode = getFriendCodeFromURL();
         const clipboardText = `8EggsFriendCode:${friendCode}`;
         
-        // Copy to clipboard
+        // 1. Copy to clipboard
         copyToClipboard(clipboardText);
         
-        // Try to open app first
-        window.location.href = `eighteggs://invite?friend_code=${friendCode}`;
-        
-        // If app doesn't open, fallback to Play Store after 500ms
-        setTimeout(() => {
-            if (document.hasFocus()) {
-                // Still in browser, redirect to Play Store
-                window.location.href = 'https://play.google.com/store/apps/details?id=com.eighteggs.eighteggs';
-            }
-        }, 500);
+        // 2. Always go to Play Store
+        window.location.href = 'https://play.google.com/store/apps/details?id=com.eighteggs.eighteggs';
     });
 }
-
 // Setup manual copy button
 function setupManualCopy() {
     const copyBtn = document.getElementById('copyBtn');
@@ -108,3 +99,4 @@ document.addEventListener('DOMContentLoaded', function() {
     const friendCode = getFriendCodeFromURL();
     document.title = `🎮 Join 8 Eggs - Invite from ${friendCode}`;
 });
+
