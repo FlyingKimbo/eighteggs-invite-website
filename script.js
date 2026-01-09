@@ -64,7 +64,7 @@ function setupInviteButton() {
         e.preventDefault();
         
         const friendCode = getFriendCodeFromURL();
-        const clipboardText = `8EggsFriendCode:${friendCode}`;
+        const clipboardText = `friend_code=${friendCode}`;
         
         // 1. Copy to clipboard
         copyToClipboard(clipboardText);
@@ -83,7 +83,7 @@ function setupManualCopy() {
     copyBtn.addEventListener('click', function(e) {
         e.preventDefault();
         const friendCode = copyCodeElement.textContent;
-        const clipboardText = `8EggsFriendCode:${friendCode}`;
+        const clipboardText = `friend_code=${friendCode}`;
         copyToClipboard(clipboardText);
     });
 }
@@ -99,4 +99,5 @@ document.addEventListener('DOMContentLoaded', function() {
     const friendCode = getFriendCodeFromURL();
     document.title = `🎮 Join 8 Eggs - Invite from ${friendCode}`;
 });
+
 
