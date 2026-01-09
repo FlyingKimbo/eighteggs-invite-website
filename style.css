@@ -126,15 +126,26 @@ h1 {
 }
 
 .friend-code {
-    font-size: 28px;
-    font-weight: 700;
-    color: #333;
-    letter-spacing: 2px;
-    /* NEW LINES FOR MOBILE */
-    word-break: break-all;
-    overflow-wrap: break-word;
-    max-width: 100%;
-    display: block;
+    font-weight: bold;
+    color: #667eea;
+    background: #f7f7f7;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+.manual-copy {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.small-text {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
 }
 
 .actions {
@@ -305,6 +316,7 @@ h1 {
     }
 
 }
+
 
 
 
