@@ -4,20 +4,12 @@ function getFriendCodeFromURL() {
     let friendCode = urlParams.get('friend_code') || 
                     urlParams.get('ref') || 
                     urlParams.get('code') || 
-                    'ABC123DEF4567890'; // Default 16-char hex
+                    'ABC123';
     
-    // Clean the code (remove special characters, keep only hex chars)
-    friendCode = friendCode.replace(/[^a-fA-F0-9]/g, '');
+    // Clean the code (remove special characters)
+    friendCode = friendCode.replace(/[^a-zA-Z0-9]/g, '');
     
-    // Ensure 16 characters (pad or truncate)
-    if (friendCode.length > 16) {
-        friendCode = friendCode.substring(0, 16);
-    } else if (friendCode.length < 16) {
-        // Pad with zeros if too short
-        friendCode = friendCode.padEnd(16, '0');
-    }
-    
-    return friendCode.toUpperCase(); // Return in uppercase for consistency
+    return friendCode || 'FRIEND123';
 }
 
 // Update page with friend code
@@ -43,7 +35,6 @@ function copyToClipboard(text) {
         .then(() => {
             console.log('Copied to clipboard:', text);
             // Optional: Show brief visual feedback
-            const event = window.event;
             if (event && event.target) {
                 const originalText = event.target.innerHTML;
                 event.target.innerHTML = '✓ Copied!';
@@ -73,7 +64,8 @@ function setupInviteButton() {
         e.preventDefault();
         
         const friendCode = getFriendCodeFromURL();
-        const clipboardText = friendCode; // ONLY the 16-char code, NO prefix!
+        // CHANGE 1: Remove "friend_code=" prefix, copy ONLY the code
+        const clipboardText = friendCode; // Changed from: `friend_code=${friendCode}`
         
         // 1. Copy to clipboard
         copyToClipboard(clipboardText);
@@ -93,7 +85,8 @@ function setupManualCopy() {
     copyBtn.addEventListener('click', function(e) {
         e.preventDefault();
         const friendCode = copyCodeElement.textContent;
-        const clipboardText = friendCode; // ONLY the 16-char code, NO prefix!
+        // CHANGE 2: Remove "friend_code=" prefix, copy ONLY the code
+        const clipboardText = friendCode; // Changed from: `friend_code=${friendCode}`
         copyToClipboard(clipboardText);
     });
 }
