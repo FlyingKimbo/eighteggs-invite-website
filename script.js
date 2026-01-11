@@ -4,12 +4,20 @@ function getFriendCodeFromURL() {
     let friendCode = urlParams.get('friend_code') || 
                     urlParams.get('ref') || 
                     urlParams.get('code') || 
-                    'ABC123';
+                    'ABC123DEF4567890'; // Default 16-char hex
     
-    // Clean the code (remove special characters)
-    friendCode = friendCode.replace(/[^a-zA-Z0-9]/g, '');
+    // Clean the code (remove special characters, keep only hex chars)
+    friendCode = friendCode.replace(/[^a-fA-F0-9]/g, '');
     
-    return friendCode || 'FRIEND123';
+    // Ensure 16 characters (pad or truncate)
+    if (friendCode.length > 16) {
+        friendCode = friendCode.substring(0, 16);
+    } else if (friendCode.length < 16) {
+        // Pad with zeros if too short
+        friendCode = friendCode.padEnd(16, '0');
+    }
+    
+    return friendCode.toUpperCase(); // Return in uppercase for consistency
 }
 
 // Update page with friend code
@@ -35,6 +43,7 @@ function copyToClipboard(text) {
         .then(() => {
             console.log('Copied to clipboard:', text);
             // Optional: Show brief visual feedback
+            const event = window.event;
             if (event && event.target) {
                 const originalText = event.target.innerHTML;
                 event.target.innerHTML = '✓ Copied!';
@@ -64,7 +73,7 @@ function setupInviteButton() {
         e.preventDefault();
         
         const friendCode = getFriendCodeFromURL();
-        const clipboardText = `friend_code=${friendCode}`;
+        const clipboardText = friendCode; // ONLY the 16-char code, NO prefix!
         
         // 1. Copy to clipboard
         copyToClipboard(clipboardText);
@@ -73,6 +82,7 @@ function setupInviteButton() {
         window.location.href = 'https://play.google.com/store/apps/details?id=com.eighteggs.eighteggs';
     });
 }
+
 // Setup manual copy button
 function setupManualCopy() {
     const copyBtn = document.getElementById('copyBtn');
@@ -83,7 +93,7 @@ function setupManualCopy() {
     copyBtn.addEventListener('click', function(e) {
         e.preventDefault();
         const friendCode = copyCodeElement.textContent;
-        const clipboardText = `friend_code=${friendCode}`;
+        const clipboardText = friendCode; // ONLY the 16-char code, NO prefix!
         copyToClipboard(clipboardText);
     });
 }
@@ -99,5 +109,3 @@ document.addEventListener('DOMContentLoaded', function() {
     const friendCode = getFriendCodeFromURL();
     document.title = `🎮 Join 8 Eggs - Invite from ${friendCode}`;
 });
-
-
