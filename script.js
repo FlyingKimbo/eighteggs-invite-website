@@ -4,7 +4,7 @@ function getFriendCodeFromURL() {
     let friendCode = urlParams.get('friend_code') || 
                     urlParams.get('ref') || 
                     urlParams.get('code') || 
-                    'ABC123';
+                    'abc123abc123abc1';
     
     // Clean the code (remove special characters)
     friendCode = friendCode.replace(/[^a-zA-Z0-9]/g, '');
@@ -102,3 +102,4 @@ document.addEventListener('DOMContentLoaded', function() {
     const friendCode = getFriendCodeFromURL();
     document.title = `🎮 Join 8 Eggs - Invite from ${friendCode}`;
 });
+
