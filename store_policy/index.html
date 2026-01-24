@@ -82,56 +82,62 @@
             <strong>📱 About This Policy:</strong> This privacy policy applies to the 8Eggs mobile game available on Google Play Store and our invitation website at invite.888solutions.info.
         </div>
 
-        <div class="section">
-            <h2>📊 Data Collection Summary</h2>
-            
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Data Type</th>
-                        <th>Collected</th>
-                        <th>Purpose</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>User IDs & Device IDs</strong></td>
-                        <td>✅ Yes</td>
-                        <td>Account management, game progress</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Display Names</strong></td>
-                        <td>✅ Yes</td>
-                        <td>Leaderboard functionality</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Game Progress & Scores</strong></td>
-                        <td>✅ Yes</td>
-                        <td>App functionality, save games</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Purchase Receipts</strong></td>
-                        <td>✅ Yes</td>
-                        <td>In-app purchase verification</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Device Information</strong></td>
-                        <td>✅ Yes</td>
-                        <td>AdMob compatibility, analytics</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Email/Personal Info</strong></td>
-                        <td>❌ No</td>
-                        <td>Not collected</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Location Data</strong></td>
-                        <td>❌ No</td>
-                        <td>Not collected</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <div class="section">
+    <h2>📊 Data Collection Summary</h2>
+    
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Data Type</th>
+                <th>Collected</th>
+                <th>Purpose</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>User IDs & Device IDs</strong></td>
+                <td>✅ Yes</td>
+                <td>Account management, game progress</td>
+            </tr>
+            <tr>
+                <td><strong>Display Names</strong></td>
+                <td>✅ Yes</td>
+                <td>Leaderboard functionality</td>
+            </tr>
+            <tr>
+                <td><strong>Game Progress & Scores</strong></td>
+                <td>✅ Yes</td>
+                <td>App functionality, save games</td>
+            </tr>
+            <tr>
+                <td><strong>Purchase Receipts</strong></td>
+                <td>✅ Yes</td>
+                <td>In-app purchase verification</td>
+            </tr>
+            <tr>
+                <td><strong>Device Information</strong></td>
+                <td>✅ Yes</td>
+                <td>AdMob compatibility, analytics</td>
+            </tr>
+            <tr>
+                <td><strong>Clipboard Data (Text Only)</strong></td>
+                <td>✅ Conditional*</td>
+                <td>Friend referral code pasting (user-initiated)</td>
+            </tr>
+            <tr>
+                <td><strong>Email/Personal Info</strong></td>
+                <td>❌ No</td>
+                <td>Not collected</td>
+            </tr>
+            <tr>
+                <td><strong>Location Data</strong></td>
+                <td>❌ No</td>
+                <td>Not collected</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><em>* Clipboard data is accessed only when user explicitly taps "Paste Friend Code" button. Not stored or transmitted.</em></p>
+    </div>
 
         <div class="section">
             <h2>🎮 Data Collection in Detail</h2>
@@ -152,7 +158,27 @@
                 <li><strong>Browser Information:</strong> For website compatibility and optimization</li>
             </ul>
         </div>
-
+        <div class="section">
+            <h2>📋 Clipboard Access (Friend Referral Feature)</h2>
+            <p><strong>Purpose:</strong> To facilitate easy friend referrals by allowing you to paste a friend code from your clipboard.</p>
+            
+            <h3>How It Works:</h3>
+            <ul>
+                <li><strong>User-Initiated Only:</strong> The app accesses your clipboard <strong>only</strong> when you explicitly tap the "Paste Friend Code" button within the referral section.</li>
+                <li><strong>No Background Access:</strong> We do <strong>not</strong> read your clipboard automatically, on app launch, or in the background.</li>
+                <li><strong>Local Processing Only:</strong> Clipboard data is used <strong>solely</strong> to pre-fill the friend code input field. It is <strong>not stored, logged, or transmitted</strong> to our servers.</li>
+                <li><strong>Format Validation:</strong> The app checks if the clipboard text matches our friend code format (e.g., alphanumeric, specific length). If it doesn't match, the data is immediately discarded.</li>
+            </ul>
+            
+            <h3>What We Access:</h3>
+            <ul>
+                <li>✅ Only text data from your clipboard (when you initiate the paste action)</li>
+                <li>❌ <strong>No</strong> images, files, or other clipboard content</li>
+                <li>❌ <strong>No</strong> continuous monitoring of clipboard changes</li>
+            </ul>
+            
+            <p><em>Note: On Android 12+, the system shows a toast notification ("App pasted from your clipboard") when this occurs, providing additional transparency.</em></p>
+        </div>
         <div class="section">
             <h2>💾 Data Storage & Security</h2>
             <p>All data is stored securely with the following measures:</p>
